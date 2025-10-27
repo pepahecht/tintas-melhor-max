@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Color House - Find Your Perfect Shade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#13a4ec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101c22",
+              },
+              fontFamily: {
+                "display": ["Public Sans", "sans-serif"]
+              },
+              borderRadius: {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+            },
+          },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+        <div class="px-40 flex flex-1 justify-center py-5 bg-white dark:bg-[#1C2B33]">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f3f4] dark:border-b-[#2A3F4B] px-10 py-3">
+                    <div class="flex items-center gap-4 text-primary">
+                        <div class="size-6">
+                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-[#111618] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Color House</h2>
+                    </div>
+                    <div class="flex flex-1 justify-end gap-8">
+                        <div class="flex items-center gap-9">
+                            <a class="text-[#111618] dark:text-white text-sm font-medium leading-normal" href="#">Home</a>
+                            <a class="text-[#111618] dark:text-white text-sm font-medium leading-normal" href="#">Products</a>
+                            <a class="text-[#111618] dark:text-white text-sm font-medium leading-normal" href="#">Inspiration</a>
+                            <a class="text-[#111618] dark:text-white text-sm font-medium leading-normal" href="#">Contact</a>
+                        </div>
+                        <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                            <span class="truncate">Shop Now</span>
+                        </button>
+                    </div>
+                </header>
+                <div class="@container">
+                    <div class="@[480px]:p-4">
+                        <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4" data-alt="Abstract colorful paint splash" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcJ3eziEMMRWrc2w8EXF2aL6rTYDhVgOR60UbHBfiuS9TSzWtneD_kWm0jRPv1CRWemtIulSV80qSDXf-5z-M3V6NZ4P9HuE7OTzcAG6yrFVzOAGgSMFo6CMAc_y8bJTO3aloGAymHG5jYb8--1AzgWd0MrT7AhJjGaQPzvl-lGdqfU6XdNFK7Lz-G5_7Uh1aqZ16q6OEbgi83igtiJ0UGerMhZolofwVQcQW_kcgylYLeZ0yBtT7tVJA3td9Gnq_73mYg-Epbh-Q");'>
+                            <div class="flex flex-col gap-2 text-center">
+                                <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                    Find Your Perfect Shade
+                                </h1>
+                                <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">Transform Your Space with Color</h2>
+                            </div>
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                                <span class="truncate">Shop Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-4 py-6">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <label class="flex flex-col min-w-40 h-12 w-full flex-1">
+                            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                <div class="text-[#617c89] dark:text-[#9FB3BC] flex border-none bg-[#f0f3f4] dark:bg-[#2A3F4B] items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f0f3f4] dark:bg-[#2A3F4B] focus:border-none h-full placeholder:text-[#617c89] dark:placeholder:text-[#9FB3BC] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search for paints..." value=""/>
+                            </div>
+                        </label>
+                        <div class="flex gap-3 flex-wrap pr-4 items-center">
+                            <button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f3f4] dark:bg-[#2A3F4B] pl-4 pr-2 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                                <p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">Color</p>
+                                <div class="text-[#111618] dark:text-white"><span class="material-symbols-outlined">arrow_drop_down</span></div>
+                            </button>
+                            <button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f3f4] dark:bg-[#2A3F4B] pl-4 pr-2 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                                <p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">Brand</p>
+                                <div class="text-[#111618] dark:text-white"><span class="material-symbols-outlined">arrow_drop_down</span></div>
+                            </button>
+                            <button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f3f4] dark:bg-[#2A3F4B] pl-4 pr-2 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                                <p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">Type</p>
+                                <div class="text-[#111618] dark:text-white"><span class="material-symbols-outlined">arrow_drop_down</span></div>
+                            </button>
+                            <button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f3f4] dark:bg-[#2A3F4B] pl-4 pr-2 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                                <p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">Finish</p>
+                                <div class="text-[#111618] dark:text-white"><span class="material-symbols-outlined">arrow_drop_down</span></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-[#111618] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Most Popular Paints</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white dark:bg-[#1C2B33] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                        <img class="h-48 w-full object-cover" data-alt="A can of Ocean Breeze paint." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlA6yZNJlU9Zb2AWWFsIDSIUEbvpur9-EllpLQaMKc1bu429dZlo8wZK_QjNy-9i2oE4Rib-s8ySOGgvFvVsdQVvBEs63SdRWYuJWPqoUvJ916hOdMtrnK2xmfT_Dmpoko4CGSh7JYKgOCl1ZfV7QSITw0QxKwh_9o99WBwrLv1LEo6eF8kU8uVDyg6sszXkcFThmz7fLzM7i43XfjmTJAMhBdR-HxbC5DzUkLaQLBBiW136StCZYciLKHovBhEE0Rxx7vSVSQ1mo"/>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-[#111618] dark:text-white">Ocean Breeze</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1">$45.99</p>
+                            <button class="mt-4 w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                <span class="truncate">View Details</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="bg-white dark:bg-[#1C2B33] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                        <img class="h-48 w-full object-cover" data-alt="A can of Sunset Glow paint." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnJ-IUbd1K6QS5VF9h10mcwMZrBRoAx5gi_px4wQya4vipJBx0V5Ku3xaRjmpRkuTaZSywArKEN37I8RjdXBJeKJmJ4ho_p92bz9KzxgjodZaHVIMDtPtlsluSbIRbPhCZXQf9WAv25Kgux-5xBXM9rOpn63a9Wh5TdpaGJjp-Q1WIxSWJz1rBrr8p8ETD0OiHcf_bxFUkegj_gPA_hxu6lbXdRo4JrGDQjcPf8NIoIbNyVl1IAWFFg_ZZ_QBG5H5SsIQAS5MxBJk"/>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-[#111618] dark:text-white">Sunset Glow</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1">$42.50</p>
+                            <button class="mt-4 w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                <span class="truncate">View Details</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="bg-white dark:bg-[#1C2B33] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                        <img class="h-48 w-full object-cover" data-alt="A can of Forest Green paint." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeIGQHmYJrZVgPsDW9JKVc8gtDwAABB0YBSsI-a9o_wDhONJE1PWavAE1l4qgOifbnjSKmLdm6iGxaeeKel5NBRToemMz6ma8vQBCMwaCCRyZLTRoAAYSWz4WwRWX8OS9j6mqonWnRf7qbxbBbm8nJhwRnIed-jlArnKyxMliUloKSzkN-mD8lOpVmm69ZFOF3KnU9JL8y19k98TBtvXnQQVEKrweA3gLzGydiiS1H2aQl36c5EF-3OegFpdoCKQtNR26hk7ZOaEw"/>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-[#111618] dark:text-white">Forest Green</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1">$48.00</p>
+                            <button class="mt-4 w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                <span class="truncate">View Details</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="bg-white dark:bg-[#1C2B33] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                        <img class="h-48 w-full object-cover" data-alt="A can of Royal Purple paint." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjVSIZfPWOZ6yjkeXWYnloS0ambs8t9sxWx3xJIs29df0MTVPUuT1e-RHYEzLoC33WngGuxhZlCHF0iJN3VojEPRz1mFBoPLvc2-OOC-MnYL3CMVMWOclZccwQhNbRoOJs09ZsM1R4wha6e64nCwPsBpE1stOo2aQerF1HSzaIdkO4pEdK_343JFsf3ix8DG-uLCIRPNt-76TVao6ZnBLwVZECiDhaqxEprdWX9QpbtWyceyYW0XxMSPM8xalYQ56vSKN7LDmMXyA"/>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-[#111618] dark:text-white">Royal Purple</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1">$55.25</p>
+                            <button class="mt-4 w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                <span class="truncate">View Details</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <footer class="bg-white dark:bg-[#1C2B33] border-t border-solid border-t-[#f0f3f4] dark:border-t-[#2A3F4B] mt-10 px-10 py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-[#111618] dark:text-white">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">About Us</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Color House is your one-stop shop for premium paints. We believe in the power of color to transform spaces and inspire creativity.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">Customer Service</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">FAQs</a></li>
+                                <li><a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">Shipping Information</a></li>
+                                <li><a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">Returns &amp; Exchanges</a></li>
+                                <li><a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">Store Location</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">123 Paintbrush Lane<br/>Colorville, CA 94123</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+                                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+                                </a>
+                                <a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+                                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                                </a>
+                                <a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+                                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.791 2.013 10.145 2 12.315 2zm-1.002 6.363a4.733 4.733 0 100 9.467 4.733 4.733 0 000-9.467zM12 15.6a3.6 3.6 0 110-7.2 3.6 3.6 0 010 7.2z" fill-rule="evenodd"></path><path d="M16.95 6.402a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+</body></html>

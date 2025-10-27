@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Product Detail Page</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                primary: "#13a4ec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101c22",
+              },
+              fontFamily: {
+                display: ["Public Sans"],
+              },
+              borderRadius: {
+                DEFAULT: "0.25rem",
+                lg: "0.5rem",
+                xl: "0.75rem",
+                full: "9999px",
+              },
+            },
+          },
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+        <div class="px-4 md:px-10 lg:px-20 py-5">
+            <div class="layout-content-container flex flex-col flex-1">
+                <div class="p-4">
+                    <div class="flex flex-wrap gap-2">
+                        <a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="#">Home</a>
+                        <span class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">/</span>
+                        <a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="#">Paint Products</a>
+                        <span class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">/</span>
+                        <span class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Everest White</span>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-8 p-4">
+                    <div class="w-full lg:w-1/2">
+                        <div class="w-full bg-white dark:bg-background-dark rounded-lg overflow-hidden">
+                            <div class="w-full bg-center bg-no-repeat bg-cover aspect-square" data-alt="A swatch of Everest White paint in a minimalist room setting." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYRSiS-ruddzAfromghTPQfAgw8p9LIboV1ydbueVZO7FXOYIPX_CLVqozEryADSWJ4HOkLr5Wy9P94WsnkIczTuP7O-71lBHwb-WhHmH1AMnUarX-k3ufVWnIMVDvVPOwfZzB6Ov7zg3GodkfDa5lNs8xld1G32b6mA07MOn3MBteaY6DDUKgXm3Uac6_aIspVkA_UsUjxmHyhplkGDMi894F_YQF3tT6FbKEBqcacgCoEP4LwjyNNT-lgq022s5hqmtSH5K-zrM");'></div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                        <div class="flex flex-col gap-3">
+                            <p class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Everest White</p>
+                            <p class="text-gray-600 dark:text-gray-300 text-base font-normal leading-normal">By Color House</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700" style="background-color: #F5F5F5;"></div>
+                            <p class="text-gray-900 dark:text-white text-sm font-medium">#F5F5F5</p>
+                        </div>
+                        <p class="text-gray-800 dark:text-gray-200 text-base font-normal leading-normal">
+                            A premium quality, durable interior paint with a smooth matte finish. Perfect for living rooms, bedrooms, and hallways. Provides excellent coverage and is easy to apply. Low VOC and environmentally friendly.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 border-t border-gray-200 dark:border-gray-700 pt-6">
+                            <div class="flex flex-col">
+                                <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Type</p>
+                                <p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Interior</p>
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Finish</p>
+                                <p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Matte</p>
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Price</p>
+                                <p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">$45.00</p>
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Stock</p>
+                                <p class="text-green-600 dark:text-green-500 text-sm font-medium leading-normal">128 units</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                            <button class="flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold text-base hover:bg-primary/90 transition-colors">
+                                <span class="material-symbols-outlined text-xl">edit</span>
+                                Edit
+                            </button>
+                            <button class="flex items-center justify-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg font-semibold text-base hover:bg-red-700 transition-colors">
+                                <span class="material-symbols-outlined text-xl">delete</span>
+                                Delete
+                            </button>
+                            <button class="flex items-center justify-center gap-2 px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 rounded-lg font-semibold text-base hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                                <span class="material-symbols-outlined text-xl">arrow_back</span>
+                                Back to Listing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body></html>

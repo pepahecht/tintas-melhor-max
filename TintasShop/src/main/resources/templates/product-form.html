@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Add New Paint</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#0A2540",
+                "secondary": "#00C49F",
+                "background-light": "#F8F9FA",
+                "background-dark": "#101c22",
+                "text-light": "#333333",
+                "text-dark": "#F8F9FA",
+                "border-light": "#CED4DA",
+                "border-dark": "#4A5568"
+              },
+              fontFamily: {
+                "display": ["Public Sans", "sans-serif"]
+              },
+              borderRadius: {
+                "DEFAULT": "0.5rem",
+                "lg": "0.75rem",
+                "xl": "1rem",
+                "full": "9999px"
+              },
+            },
+          },
+        }
+    </script>
+    <style>
+        body {
+          font-family: 'Public Sans', sans-serif;
+        }
+        .form-input {
+          border-color: #CED4DA;
+        }
+        .form-input:focus {
+          border-color: #00C49F;
+          box-shadow: 0 0 0 2px rgba(0, 196, 159, 0.2);
+        }
+        .dark .form-input {
+            background-color: #2D3748;
+            border-color: #4A5568;
+            color: #F8F9FA;
+        }
+        .dark .form-input:focus {
+            border-color: #00C49F;
+        }
+        .dark .form-input::placeholder {
+            color: #A0AEC0;
+        }
+        .dark .text-light {
+            color: #F8F9FA;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+        <div class="flex flex-1 justify-center py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
+            <div class="layout-content-container flex flex-col w-full max-w-4xl flex-1">
+                <div class="flex flex-wrap justify-between items-center gap-4 pb-8">
+                    <h1 class="text-primary dark:text-white text-4xl font-black leading-tight tracking-tight">Add New Paint Product</h1>
+                </div>
+                <div class="space-y-12">
+                    <!-- Basic Information -->
+                    <div class="border-b border-border-light dark:border-border-dark pb-12">
+                        <h2 class="text-2xl font-bold leading-tight tracking-tight text-primary dark:text-white">Basic Information</h2>
+                        <div class="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <div class="sm:col-span-3">
+                                <label class="block text-base font-medium leading-6 text-light" for="paint-name">Paint Name</label>
+                                <div class="mt-2">
+                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="paint-name" name="paint-name" placeholder="e.g. Royal Blue" type="text"/>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-3">
+                                <label class="block text-base font-medium leading-6 text-light" for="brand">Brand</label>
+                                <div class="mt-2">
+                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="brand" name="brand" placeholder="e.g. Color House" type="text"/>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-3">
+                                <label class="block text-base font-medium leading-6 text-light" for="type">Type</label>
+                                <div class="mt-2">
+                                    <select class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary sm:max-w-xs sm:text-base sm:leading-6" id="type" name="type">
+                                        <option>Select type</option>
+                                        <option>Interior</option>
+                                        <option>Exterior</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Color Details -->
+                    <div class="border-b border-border-light dark:border-border-dark pb-12">
+                        <h2 class="text-2xl font-bold leading-tight tracking-tight text-primary dark:text-white">Color Details</h2>
+                        <div class="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <div class="sm:col-span-2">
+                                <label class="block text-base font-medium leading-6 text-light" for="color-name">Color Name</label>
+                                <div class="mt-2">
+                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="color-name" name="color-name" placeholder="e.g. Sky Blue" type="text"/>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-base font-medium leading-6 text-light" for="color-code">Color Code</label>
+                                <div class="mt-2">
+                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="color-code" name="color-code" placeholder="#87CEEB" type="text"/>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-base font-medium leading-6 text-light" for="color-picker">Color Picker</label>
+                                <div class="mt-2">
+                                    <input class="form-input block w-full h-[3.25rem] rounded-lg border-0 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary cursor-pointer" id="color-picker" name="color-picker" type="color" value="#87ceeb"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Specifications -->
+                    <div class="border-b border-border-light dark:border-border-dark pb-12">
+                        <h2 class="text-2xl font-bold leading-tight tracking-tight text-primary dark:text-white">Product Specifications</h2>
+                        <div class="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <div class="sm:col-span-2">
+                                <label class="block text-base font-medium leading-6 text-light" for="finish">Finish</label>
+                                <div class="mt-2">
+                                    <select class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="finish" name="finish">
+                                        <option>Select finish</option>
+                                        <option>Matte</option>
+                                        <option>Satin</option>
+                                        <option>Gloss</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-base font-medium leading-6 text-light" for="price">Price</label>
+                                <div class="mt-2">
+                                    <div class="relative rounded-lg shadow-sm">
+                                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                            <span class="text-gray-500 sm:text-base">$</span>
+                                        </div>
+                                        <input class="form-input block w-full rounded-lg border-0 py-3 pl-7 pr-4 ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="price" name="price" placeholder="0.00" type="text"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-base font-medium leading-6 text-light" for="stock-quantity">Stock Quantity</label>
+                                <div class="mt-2">
+                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="stock-quantity" name="stock-quantity" placeholder="0" type="number"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional Information -->
+                    <div>
+                        <h2 class="text-2xl font-bold leading-tight tracking-tight text-primary dark:text-white">Additional Information</h2>
+                        <div class="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <div class="col-span-full">
+                                <label class="block text-base font-medium leading-6 text-light" for="description">Description</label>
+                                <div class="mt-2">
+                                    <textarea class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="description" name="description" placeholder="Add a description for the paint..." rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-span-full">
+                                <label class="block text-base font-medium leading-6 text-light" for="cover-photo">Product Image</label>
+                                <div class="mt-2 flex justify-center rounded-lg border border-dashed border-border-light dark:border-border-dark px-6 py-10">
+                                    <div class="text-center">
+                                        <span class="material-symbols-outlined text-5xl text-gray-400">image</span>
+                                        <div class="mt-4 flex text-base leading-6 text-gray-600 dark:text-gray-400">
+                                            <label class="relative cursor-pointer rounded-md bg-background-light dark:bg-background-dark font-semibold text-secondary focus-within:outline-none focus-within:ring-2 focus-within:ring-secondary focus-within:ring-offset-2 hover:text-secondary-dark" for="file-upload">
+                                                <span>Upload a file</span>
+                                                <input class="sr-only" id="file-upload" name="file-upload" type="file"/>
+                                            </label>
+                                            <p class="pl-1">or drag and drop</p>
+                                        </div>
+                                        <p class="text-xs leading-5 text-gray-600 dark:text-gray-400">PNG, JPG, GIF up to 10MB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Action Buttons -->
+                <div class="mt-12 flex items-center justify-end gap-x-6 border-t border-border-light dark:border-border-dark pt-8">
+                    <button class="text-base font-semibold leading-6 text-light hover:text-gray-700 dark:hover:text-gray-300" type="button">Cancel</button>
+                    <button class="rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" type="submit">Save Paint</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body></html>

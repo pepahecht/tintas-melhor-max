@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tintas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Tintas</h1>
+    <a href="/tintas/new" class="btn btn-primary mb-3">Cadastrar Nova Tinta</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Marca</th>
+            <th>Tipo</th>
+            <th>Cor</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tinta : ${tintas}">
+            <td th:text="${tinta.id}"></td>
+            <td th:text="${tinta.name}"></td>
+            <td th:text="${tinta.brand}"></td>
+            <td th:text="${tinta.type}"></td>
+            <td>
+                <span th:style="'background-color:' + ${tinta.colorCode} + ';display:inline-block;width:30px;height:20px;border:1px solid #000;'"></span>
+                <span th:text="${tinta.colorCode}"></span>
+            </td>
+            <td th:text="${tinta.price}"></td>
+            <td th:text="${tinta.stock}"></td>
+            <td>
+                <a th:href="@{'/tintas/view/' + ${tinta.id}}" class="btn btn-info btn-sm">Ver</a>
+                <a th:href="@{'/tintas/edit/' + ${tinta.id}}" class="btn btn-warning btn-sm">Editar</a>
+                <a th:href="@{'/tintas/delete/' + ${tinta.id}}" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza?')">Excluir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
