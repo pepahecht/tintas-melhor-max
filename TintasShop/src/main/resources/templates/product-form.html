@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light" lang="en" xmlns:th="http://www.thymeleaf.org"><head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Add New Paint</title>
@@ -66,11 +66,12 @@
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
     <div class="layout-container flex h-full grow flex-col">
         <div class="flex flex-1 justify-center py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
-            <div class="layout-content-container flex flex-col w-full max-w-4xl flex-1">
+                <div class="layout-content-container flex flex-col w-full max-w-4xl flex-1">
                 <div class="flex flex-wrap justify-between items-center gap-4 pb-8">
                     <h1 class="text-primary dark:text-white text-4xl font-black leading-tight tracking-tight">Add New Paint Product</h1>
                 </div>
                 <div class="space-y-12">
+                    <form th:object="${product}" th:action="@{/products}" method="post" enctype="multipart/form-data">
                     <!-- Basic Information -->
                     <div class="border-b border-border-light dark:border-border-dark pb-12">
                         <h2 class="text-2xl font-bold leading-tight tracking-tight text-primary dark:text-white">Basic Information</h2>
@@ -78,22 +79,22 @@
                             <div class="sm:col-span-3">
                                 <label class="block text-base font-medium leading-6 text-light" for="paint-name">Paint Name</label>
                                 <div class="mt-2">
-                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="paint-name" name="paint-name" placeholder="e.g. Royal Blue" type="text"/>
+                                    <input th:field="*{name}" class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="paint-name" type="text"/>
                                 </div>
                             </div>
                             <div class="sm:col-span-3">
                                 <label class="block text-base font-medium leading-6 text-light" for="brand">Brand</label>
                                 <div class="mt-2">
-                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="brand" name="brand" placeholder="e.g. Color House" type="text"/>
+                                    <input th:field="*{brand}" class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="brand" type="text"/>
                                 </div>
                             </div>
                             <div class="sm:col-span-3">
                                 <label class="block text-base font-medium leading-6 text-light" for="type">Type</label>
                                 <div class="mt-2">
-                                    <select class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary sm:max-w-xs sm:text-base sm:leading-6" id="type" name="type">
-                                        <option>Select type</option>
-                                        <option>Interior</option>
-                                        <option>Exterior</option>
+                                    <select th:field="*{type}" class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary sm:max-w-xs sm:text-base sm:leading-6" id="type">
+                                        <option value="">Select type</option>
+                                        <option value="Interior">Interior</option>
+                                        <option value="Exterior">Exterior</option>
                                     </select>
                                 </div>
                             </div>
@@ -106,19 +107,19 @@
                             <div class="sm:col-span-2">
                                 <label class="block text-base font-medium leading-6 text-light" for="color-name">Color Name</label>
                                 <div class="mt-2">
-                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="color-name" name="color-name" placeholder="e.g. Sky Blue" type="text"/>
+                                    <input th:field="*{name}" class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="color-name" type="text"/>
                                 </div>
                             </div>
                             <div class="sm:col-span-2">
                                 <label class="block text-base font-medium leading-6 text-light" for="color-code">Color Code</label>
                                 <div class="mt-2">
-                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="color-code" name="color-code" placeholder="#87CEEB" type="text"/>
+                                    <input th:field="*{colorCode}" class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="color-code" type="text"/>
                                 </div>
                             </div>
                             <div class="sm:col-span-2">
                                 <label class="block text-base font-medium leading-6 text-light" for="color-picker">Color Picker</label>
                                 <div class="mt-2">
-                                    <input class="form-input block w-full h-[3.25rem] rounded-lg border-0 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary cursor-pointer" id="color-picker" name="color-picker" type="color" value="#87ceeb"/>
+                                    <input th:field="*{colorPicker}" class="form-input block w-full h-[3.25rem] rounded-lg border-0 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary cursor-pointer" id="color-picker" type="color" />
                                 </div>
                             </div>
                         </div>
@@ -130,11 +131,11 @@
                             <div class="sm:col-span-2">
                                 <label class="block text-base font-medium leading-6 text-light" for="finish">Finish</label>
                                 <div class="mt-2">
-                                    <select class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="finish" name="finish">
-                                        <option>Select finish</option>
-                                        <option>Matte</option>
-                                        <option>Satin</option>
-                                        <option>Gloss</option>
+                                    <select th:field="*{finish}" class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="finish">
+                                        <option value="">Select finish</option>
+                                        <option value="Matte">Matte</option>
+                                        <option value="Satin">Satin</option>
+                                        <option value="Gloss">Gloss</option>
                                     </select>
                                 </div>
                             </div>
@@ -145,14 +146,14 @@
                                         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                             <span class="text-gray-500 sm:text-base">$</span>
                                         </div>
-                                        <input class="form-input block w-full rounded-lg border-0 py-3 pl-7 pr-4 ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="price" name="price" placeholder="0.00" type="text"/>
+                                        <input th:field="*{price}" class="form-input block w-full rounded-lg border-0 py-3 pl-7 pr-4 ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="price" type="number" step="0.01"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="sm:col-span-2">
                                 <label class="block text-base font-medium leading-6 text-light" for="stock-quantity">Stock Quantity</label>
                                 <div class="mt-2">
-                                    <input class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="stock-quantity" name="stock-quantity" placeholder="0" type="number"/>
+                                    <input th:field="*{stock}" class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="stock-quantity" type="number"/>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +165,7 @@
                             <div class="col-span-full">
                                 <label class="block text-base font-medium leading-6 text-light" for="description">Description</label>
                                 <div class="mt-2">
-                                    <textarea class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="description" name="description" placeholder="Add a description for the paint..." rows="4"></textarea>
+                                    <textarea th:field="*{description}" class="form-input block w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="description" rows="4"></textarea>
                                 </div>
                             </div>
                             <div class="col-span-full">
@@ -175,7 +176,7 @@
                                         <div class="mt-4 flex text-base leading-6 text-gray-600 dark:text-gray-400">
                                             <label class="relative cursor-pointer rounded-md bg-background-light dark:bg-background-dark font-semibold text-secondary focus-within:outline-none focus-within:ring-2 focus-within:ring-secondary focus-within:ring-offset-2 hover:text-secondary-dark" for="file-upload">
                                                 <span>Upload a file</span>
-                                                <input class="sr-only" id="file-upload" name="file-upload" type="file"/>
+                                                <input class="sr-only" id="file-upload" name="imageFile" type="file"/>
                                             </label>
                                             <p class="pl-1">or drag and drop</p>
                                         </div>
@@ -185,11 +186,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Action Buttons -->
-                <div class="mt-12 flex items-center justify-end gap-x-6 border-t border-border-light dark:border-border-dark pt-8">
-                    <button class="text-base font-semibold leading-6 text-light hover:text-gray-700 dark:hover:text-gray-300" type="button">Cancel</button>
+                    <div class="mt-12 flex items-center justify-end gap-x-6 border-t border-border-light dark:border-border-dark pt-8">
+                    <a href="/products" class="text-base font-semibold leading-6 text-light hover:text-gray-700 dark:hover:text-gray-300">Cancel</a>
                     <button class="rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" type="submit">Save Paint</button>
+                </div>
+                    </form>
                 </div>
             </div>
         </div>

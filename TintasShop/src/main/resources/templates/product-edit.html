@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light" lang="en" xmlns:th="http://www.thymeleaf.org"><head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Update Paint - Color House</title>
@@ -59,29 +59,30 @@
         <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
             <div class="layout-content-container flex flex-col w-full max-w-4xl flex-1">
                 <div class="flex flex-wrap justify-between gap-3 p-4">
-                    <p class="text-[#111618] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Update Paint: Emerald Green</p>
+                    <p class="text-[#111618] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72" th:text="'Update Paint: ' + ${product.name}">Update Paint</p>
                 </div>
                 <div class="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 md:p-8 mt-6">
-                    <form>
+                    <form th:object="${product}" th:action="@{/products}" method="post" enctype="multipart/form-data">
+                        <input type="hidden" th:field="*{id}"/>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                             <!-- Product Information -->
                             <div class="md:col-span-2 font-bold text-xl mb-2 text-text-primary dark:text-white">Product Information</div>
                             <label class="flex flex-col flex-1">
                                 <p class="text-text-primary dark:text-gray-300 text-base font-medium leading-normal pb-2">Paint Name</p>
-                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal" value="Emerald Green"/>
+                            <input th:field="*{name}" id="paint-name" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal" />
                             </label>
                             <label class="flex flex-col flex-1">
                                 <p class="text-text-primary dark:text-gray-300 text-base font-medium leading-normal pb-2">Brand</p>
-                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal" value="Sherwin-Williams"/>
+                            <input th:field="*{brand}" id="brand" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal" />
                             </label>
                             <label class="flex flex-col flex-1">
                                 <p class="text-text-primary dark:text-gray-300 text-base font-medium leading-normal pb-2">SKU/Product ID</p>
-                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal" value="SW-6422"/>
+                            <input th:field="*{sku}" id="sku" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal" />
                             </label>
                             <div class="md:col-span-2">
                                 <label class="flex flex-col">
                                     <p class="text-text-primary dark:text-gray-300 text-base font-medium leading-normal pb-2">Description</p>
-                                    <textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary min-h-[120px] placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal">A versatile, deep green with a touch of blue, perfect for creating a serene and sophisticated atmosphere.</textarea>
+                                <textarea th:field="*{description}" class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary min-h-[120px] placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal"></textarea>
                                 </label>
                             </div>
                             <!-- Color Details -->
@@ -89,9 +90,9 @@
                             <div class="flex items-end gap-4">
                                 <label class="flex flex-col flex-1">
                                     <p class="text-text-primary dark:text-gray-300 text-base font-medium leading-normal pb-2">Color Code (Hex)</p>
-                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal" value="#005851"/>
+                                <input th:field="*{colorCode}" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal" />
                                 </label>
-                                <div class="w-14 h-14 rounded-lg" data-alt="Color swatch for Emerald Green" style="background-color: #005851;"></div>
+                                <div class="w-14 h-14 rounded-lg" th:attr="data-alt=${'Color swatch for ' + product.name}" th:style="'background-color: ' + ${product.colorCode}"></div>
                             </div>
                             <!-- Spacer to align next row -->
                             <div></div>
@@ -99,39 +100,39 @@
                             <div class="md:col-span-2 font-bold text-xl mb-2 mt-6 text-text-primary dark:text-white">Specifications</div>
                             <label class="flex flex-col flex-1">
                                 <p class="text-text-primary dark:text-gray-300 text-base font-medium leading-normal pb-2">Paint Type</p>
-                                <select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal">
-                                    <option>Latex</option>
-                                    <option>Oil-based</option>
-                                    <option>Acrylic</option>
-                                </select>
+                            <select th:field="*{type}" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal">
+                                <option value="">Select type</option>
+                                <option value="Interior">Interior</option>
+                                <option value="Exterior">Exterior</option>
+                            </select>
                             </label>
                             <label class="flex flex-col flex-1">
                                 <p class="text-text-primary dark:text-gray-300 text-base font-medium leading-normal pb-2">Finish</p>
-                                <select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal">
-                                    <option>Matte</option>
-                                    <option selected="">Satin</option>
-                                    <option>Gloss</option>
-                                    <option>Semi-Gloss</option>
-                                </select>
+                            <select th:field="*{finish}" class="form-input flex w-full rounded-lg border-0 py-3 px-4 shadow-sm ring-1 ring-inset ring-border-light focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="finish">
+                                <option value="">Select finish</option>
+                                <option value="Matte">Matte</option>
+                                <option value="Satin">Satin</option>
+                                <option value="Gloss">Gloss</option>
+                            </select>
                             </label>
                             <label class="flex flex-col flex-1">
                                 <p class="text-text-primary dark:text-gray-300 text-base font-medium leading-normal pb-2">Size</p>
-                                <select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal">
-                                    <option>Quart</option>
-                                    <option selected="">Gallon</option>
-                                    <option>5 Gallon</option>
+                                <select th:field="*{size}" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal">
+                                    <option value="Quart">Quart</option>
+                                    <option value="Gallon" selected="">Gallon</option>
+                                    <option value="5 Gallon">5 Gallon</option>
                                 </select>
                             </label>
                             <!-- Pricing -->
                             <div class="md:col-span-2 font-bold text-xl mb-2 mt-6 text-text-primary dark:text-white">Pricing</div>
                             <label class="flex flex-col flex-1">
                                 <p class="text-text-primary dark:text-gray-300 text-base font-medium leading-normal pb-2">Price ($)</p>
-                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe2e6] dark:border-gray-700 bg-white focus:border-primary h-14 placeholder:text-[#617c89] p-[15px] text-base font-normal leading-normal" step="0.01" type="number" value="65.99"/>
+                            <input th:field="*{price}" class="form-input flex w-full rounded-lg border-0 py-3 pl-7 pr-4 ring-1 ring-inset ring-border-light placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-base sm:leading-6" id="price" type="number" step="0.01"/>
                             </label>
                         </div>
                         <!-- Action Buttons -->
                         <div class="flex justify-end gap-4 mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-                            <button class="px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-700 text-text-primary dark:text-white font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" type="button">Cancel</button>
+                            <a href="/products" class="px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-700 text-text-primary dark:text-white font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">Cancel</a>
                             <button class="px-6 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-blue-700 transition-colors" type="submit">Save Changes</button>
                         </div>
                     </form>
